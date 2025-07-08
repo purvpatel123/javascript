@@ -125,3 +125,100 @@ var sayHi = function () {
 };
 
 ```
+# 3 Scope, Scope Chain & Lexical Environment
+
+## ✅ What is Scope in JavaScript?
+
+**Scope** in JavaScript defines **where variables and functions are accessible** in the code.
+
+There are three types of scope:
+
+1. **Global Scope** – Variables declared outside any function or block
+2. **Function (Local) Scope** – Variables declared inside a function
+3. **Block Scope** – Variables declared using `let` or `const` inside `{}` blocks (like loops, if conditions)
+
+### 🔍 Example:
+
+```javascript
+var globalVar = "I am global";
+
+function test() {
+  var localVar = "I am local";
+  console.log(globalVar); // Accessible
+  console.log(localVar);  // Accessible
+}
+
+test();
+console.log(localVar); // ❌ Error (not in scope)
+```
+
+---
+
+## ✅ What is Scope Chain?
+
+The **Scope Chain** is the **chain of lexical environments** .
+
+When a variable is used, JavaScript looks:
+
+1. In the current scope
+2. In the outer (parent) scope
+3. Continues until the **global scope**
+
+If not found, it throws a **ReferenceError**.
+
+### 🔍 Example:
+
+```javascript
+var a = 10;
+function outer() {
+  var b = 20;
+  function inner() {
+    var c = 30;
+    console.log(a, b, c); // 10 20 30
+  }
+  inner();
+}
+outer();
+```
+
+Here, `inner()` can access `b` and `a` through the **scope chain**.
+
+---
+
+## ✅ What is Lexical Environment?
+
+A **Lexical Environment** is a structure that holds:
+
+* Variable/function declarations in the current scope
+* A reference to its **outer (parent) lexical environment**
+
+It's created **whenever a function is invoked**
+
+### ✅ Lexical means "by position in the source code"
+
+> A function’s access to variables is based on **where it is defined**, not where it is called.
+
+### 🔍 Example:
+
+```javascript
+let language = "JavaScript";
+
+function showLanguage() {
+  console.log("I am learning", language);
+}
+
+showLanguage(); // Output: I am learning JavaScript
+```
+
+---
+
+## ✅ Interview Summary:
+
+| Term                | Meaning                                               |
+| ------------------- | ----------------------------------------------------- |
+| Scope               | Region where a variable is accessible                 |
+| Scope Chain         | JS looks up variables from inner to outer scope       |
+| Lexical Environment | Structure holding variables + reference to parent env |
+
+
+
