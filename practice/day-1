@@ -1,0 +1,79 @@
+
+                     //upper case 
+
+const arr=["a", "b", "c"]
+
+const result=arr.map((ch)=>{
+       return String.fromCharCode(ch.charCodeAt(0)-32)
+})
+
+console.log(result);
+
+
+
+                     //map the name
+
+const users = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 },
+];
+
+const result=users.map(({name})=>(name))
+
+console.log(result)
+
+
+                     //squered of even number
+
+const arr=[1, 2, 3, 4]
+
+const result=arr.filter((i)=>{
+    return i%2==0;
+}).map((i)=>{
+    return i=i*2
+})
+
+console.log(result)
+
+                     //filter email of active user
+
+  const users = [
+  { name: 'Alice', email: 'a@mail.com', active: true },
+  { name: 'Bob', email: 'b@mail.com', active: false },
+  { name: 'Charlie', email: 'c@mail.com', active: true },
+];
+
+
+const result=users.filter((i)=>{
+    return i.active==true;
+}).map((i)=>{
+    return i.email;
+})
+
+console.log(result) 
+
+
+                   //Convert array of strings to lengths of strings > 3 characters
+
+  const arr=["hi", "hello", "js", "world"]
+
+const result=arr.filter((i)=>{
+    return i.length>=3;
+}).map((i)=>{
+    return i.length;
+})
+
+console.log(result)
+
+
+                  //
+
+
+
+
+
+
+
+
+
+  
