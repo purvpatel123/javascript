@@ -66,7 +66,16 @@ const result=arr.filter((i)=>{
 console.log(result)
 
 
-                  //
+                  //celcius to feran
+const celcius=[0, 10, 20, 30]
+const result=celcius.map((i)=>{
+    return ((i*9/5)+32)
+})
+
+
+console.log(result)
+
+                 
 
 
 
