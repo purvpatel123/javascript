@@ -1,0 +1,17 @@
+                  //Pair with Target Sum
+                  //Given a sorted array and a target sum, find if there exists a pair of elements that sum up to the target.
+const arr = [1, 2, 4, 4]
+function sum(array,target){
+    
+    for(let i=0;i<arr.length;i++){
+        for(let j=i+1;j<arr.length;j++){
+            if(arr[i]+arr[j]===target){
+                return  [i,j]
+                   
+                
+            }
+        }
+    }
+    return null;
+}
+console.log(sum(arr,8))
